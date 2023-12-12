@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <% if (messages.length) { %>
+    <ul>
+      <% messages.forEach(function(message) { %>
+      <li>
+        <strong><%= message.user %>:</strong>
+        <span><%= message.text %></span> -
+        <em><%= message.added.toDateString() %></em>
+      </li>
+      <% }) %>
+    </ul>
+    <% } else { %>
+    <p>No messages yet.</p>
+    <% } %>
+
+    <a href="/new">Add a message</a>
+  </body>
+</html>
